@@ -13,19 +13,19 @@ declare class SoundCloud {
      * @param query The query to search for
      * @param limit The limit value for the returned results
      */
-    async search(query: string, limit?: number): Array<object>;
+    search(query: string, limit?: number): Promise<Array<object>>;
 
     /**
      * Get any track metadada by given id
      * @param track_id The track's unique id
      */
-    async getTrack(track_id: string): object;
+    getTrack(track_id: string): Promise<object>;
 
     /**
      * Returns an array of URLs to stream from
      * @param track The track metadata object
      */
-    async getTrackTranscodings(track: object): Array<string>;
+    getTrackTranscodings(track: object): Promise<Array<string>>;
 
 }
 
