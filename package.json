@@ -1,0 +1,23 @@
+{
+    "name": "soundcloud-api",
+    "version": "1.0.0",
+    "description": "SoundCloud RESTful API for Node.JS",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Drippy-Music/drippy-soundcloud-api.git"
+    },
+    "author": "Vitor Mac",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Drippy-Music/drippy-soundcloud-api/issues"
+    },
+    "homepage": "https://github.com/Drippy-Music/drippy-soundcloud-api#readme",
+    "dependencies": {
+        "axios": "^0.19.2"
+    }
+}
