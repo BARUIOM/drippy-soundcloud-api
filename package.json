@@ -1,5 +1,5 @@
 {
-    "name": "soundcloud-api",
+    "name": "@drippy-music/soundcloud-api",
     "version": "1.0.0",
     "description": "SoundCloud RESTful API for Node.JS",
     "main": "index.js",
