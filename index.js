@@ -47,8 +47,8 @@ module.exports = class SoundCloud {
                 params: { client_id: this.client_id }
             });
 
-            const m3u = await request.get({ url: res.data['url'] });
-            for (let match; (match = regex.exec(m3u));) chunks.push(match[0]);
+            const m3u = await axios.get(res.data['url']);
+            for (let match; (match = regex.exec(m3u.data));) chunks.push(match[0]);
             return chunks;
         }
 
