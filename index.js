@@ -27,10 +27,10 @@ module.exports = class SoundCloud {
         return res.data;
     }
 
-    async getTrack(track_id) {
-        const res = await axios.get(`/tracks/${track_id}`, {
+    async getTracks(...tracks) {
+        const res = await axios.get('/tracks', {
             baseURL: api_url,
-            params: { client_id: this.client_id }
+            params: { client_id: this.client_id, ids: tracks.join() }
         });
         return res.data;
     }

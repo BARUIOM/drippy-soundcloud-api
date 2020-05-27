@@ -22,10 +22,10 @@ declare class SoundCloud {
     getPlaylist(playlist_id: string): Promise<object>;
 
     /**
-     * Get any track metadada by given id
-     * @param track_id The track's unique id
+     * Get tracks metadada by given ids
+     * @param tracks The track id list
      */
-    getTrack(track_id: string): Promise<object>;
+    getTracks(...tracks: string[]): Promise<object>;
 
     /**
      * Returns an array of URLs to stream from
