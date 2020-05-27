@@ -19,6 +19,14 @@ module.exports = class SoundCloud {
         return [...res.data['collection']];
     }
 
+    async getPlaylist(playlist_id) {
+        const res = await axios.get(`/playlists/${playlist_id}`, {
+            baseURL: api_url,
+            params: { client_id: this.client_id }
+        });
+        return res.data;
+    }
+
     async getTrack(track_id) {
         const res = await axios.get(`/tracks/${track_id}`, {
             baseURL: api_url,

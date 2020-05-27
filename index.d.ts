@@ -16,6 +16,12 @@ declare class SoundCloud {
     search(query: string, limit?: number): Promise<Array<object>>;
 
     /**
+     * Get any playlist metadada by given id
+     * @param playlist_id The playlist's unique id
+     */
+    getPlaylist(playlist_id: string): Promise<object>;
+
+    /**
      * Get any track metadada by given id
      * @param track_id The track's unique id
      */
