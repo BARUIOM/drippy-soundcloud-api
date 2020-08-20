@@ -31,7 +31,7 @@ declare class SoundCloud {
      * Returns an array of URLs to stream from
      * @param track The track metadata object
      */
-    getTrackTranscodings(track: object): Promise<Array<string>>;
+    getTrackTranscodings(track: object): Promise<string | undefined>;
 
 }
 

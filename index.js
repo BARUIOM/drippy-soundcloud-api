@@ -44,11 +44,8 @@ module.exports = class SoundCloud {
                 params: { client_id: this.client_id }
             });
 
-            return [res.data['url']];
+            return res.data['url'];
         } else if (transcodings.some(e => e.format.protocol == 'hls' && e.format.mime_type == 'audio/mpeg')) {
-            const chunks = [];
-            const regex = /(^(?!#).+)/gm;
-
             const hls = transcodings.find(e => e.format.protocol == 'hls' && e.format.mime_type == 'audio/mpeg');
             const res = await axios.get(hls['url'], {
                 baseURL: api_url,
@@ -56,11 +53,9 @@ module.exports = class SoundCloud {
             });
 
             const m3u = await axios.get(res.data['url']);
-            for (let match; (match = regex.exec(m3u.data));) chunks.push(match[0]);
-            return chunks;
+            return /(.+)\n#EXT-X-ENDLIST/.exec(m3u.data)[1]
+                .replace(/\d+?\//, '0/');
         }
-
-        return [];
     }
 
 }
